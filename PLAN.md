@@ -205,4 +205,4 @@ El **gauge de preparació (readiness)**: un mesurador radial gran al panell prin
 | 3 | Autoria del contingut (teoria + resums + glossari) | Fet |
 | 4 | Banc de preguntes (quizzes + simulador) — ampliar el banc | **Fet** (69 preguntes) |
 | 5 | Pràctica + flashcards + progrés + estadístiques | **Fet** |
-| 6 | Desplegament a GitHub Pages + proves mòbil | Pendent |
+| 6 | Desplegament a GitHub Pages + proves mòbil | **Fet** (https://bbatakk.github.io/CertificatAWS/) |
