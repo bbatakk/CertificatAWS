@@ -64,6 +64,18 @@ AFP.app = (function () {
     );
   }
 
+  /* Actualitza la classe is-active de cada enllaç de navegació i dels dominis */
+  function updateNavActive() {
+    var hash = window.location.hash || "#/";
+    document.querySelectorAll(".nav__item").forEach(function (el) {
+      var href = el.getAttribute("href");
+      if (!href) return;
+      var isActive = href === hash || (href !== "#/" && hash.indexOf(href) === 0);
+      if (isActive) el.classList.add("is-active");
+      else el.classList.remove("is-active");
+    });
+  }
+
   function buildShell() {
     var theme = AFP.store.getTheme();
     var pct = AFP.progress.overallPct();
@@ -150,6 +162,8 @@ AFP.app = (function () {
   }
 
   function postRender() {
+    // Actualitza l'enllaç actiu del menú segons la ruta actual
+    updateNavActive();
     // Recalcula el crumb i el progrés del sidebar
     var sb = document.querySelector(".sidebar");
     if (sb) {
