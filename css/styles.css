@@ -747,6 +747,11 @@ code, kbd, pre {
 /* --------------------------------------------------------------------------
    12. Responsive
    -------------------------------------------------------------------------- */
+/* El backdrop és només per al menú mòbil: fora del flux a escriptori */
+.sidebar-backdrop {
+  display: none;
+}
+
 @media (max-width: 920px) {
   .app {
     grid-template-columns: 1fr;
@@ -769,6 +774,7 @@ code, kbd, pre {
   .sidebar-backdrop {
     position: fixed;
     inset: 0;
+    display: block;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     pointer-events: none;
