@@ -69,6 +69,7 @@ AFP.app = (function () {
     var pct = AFP.progress.overallPct();
 
     var html =
+      '<div class="app">' +
       '<div class="sidebar" id="sidebar">' +
         '<div class="sidebar__brand">' +
           '<div class="brand-mark">AI</div>' +
@@ -112,6 +113,7 @@ AFP.app = (function () {
         '<div class="main__body">' +
           AFP.router.render() +
         "</div>" +
+      "</div>" +
       "</div>";
 
     document.getElementById("app").innerHTML = html;
