@@ -1417,3 +1417,118 @@ code, kbd, pre {
 }
 
 .section-title h2 { margin: 0; }
+
+/* --------------------------------------------------------------------------
+   14. Millores responsive (mòbil i pantalles petites)
+   -------------------------------------------------------------------------- */
+@media (max-width: 720px) {
+  .content {
+    padding: var(--space-4) var(--space-3) var(--space-6);
+  }
+
+  /* Hero: menys padding i text més gran llegible */
+  .hero {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .hero__title { font-size: 1.55rem; }
+
+  .btn {
+    padding: 12px 14px;
+    font-size: var(--fs-sm);
+    justify-content: center;
+    width: auto;
+  }
+
+  /* Resultats: apilar i reduir mida */
+  .result-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .result-hero__score { font-size: 2.4rem; }
+
+  .result-hero .flex.ml-auto { margin-left: 0; }
+
+  .result-item__head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .result-item__head .ml-auto { margin-left: 0; }
+
+  /* Opcions de resposta: més àrea de toc */
+  .option {
+    padding: 13px 12px;
+  }
+
+  /* Header de quiz/examen: apilar o compactar */
+  .question-card__prompt { font-size: 1.05rem; }
+
+  .quiz-bar {
+    flex-wrap: wrap;
+  }
+
+  .exam-topbar {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 30;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    padding: var(--space-2) var(--space-3);
+    justify-content: space-between;
+  }
+
+  .exam-timer {
+    font-size: 1.05rem;
+    padding: 4px 12px;
+  }
+
+  /* Taules: ja tenen scroll horitzontal via .table-wrap */
+  .theory-table { font-size: var(--fs-xs); }
+
+  /* Flashcards */
+  .flashcard__inner { min-height: 220px; }
+
+  .flashcard__face { padding: var(--space-5); }
+
+  .flashcard__text { font-size: 1.05rem; }
+
+  .flashcard-controls .btn { flex: 1 1 100%; }
+
+  /* Targeta de valors (stats/hero) */
+  .stat__num { font-size: 1.2rem; }
+
+  /* Navegació anterior/següent de teoria: apilar */
+  .theory-nav {
+    flex-direction: column;
+  }
+
+  .theory-nav a, .theory-nav span { max-width: 100%; }
+
+  /* Calls a l'acció dels hero */
+  .hero__stats { gap: var(--space-3); }
+
+  .domain-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .domain-row__pct { text-align: left; }
+
+  .section-title {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: var(--space-5) 0 var(--space-3);
+  }
+}
+
+@media (max-width: 380px) {
+  .content { padding: var(--space-3) var(--space-2) var(--space-5); }
+
+  .hero { padding: var(--space-4) var(--space-3); }
+
+  .gauge__num { font-size: 1.9rem; }
+}
