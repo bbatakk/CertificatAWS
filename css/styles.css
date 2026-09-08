@@ -1448,8 +1448,16 @@ code, kbd, pre {
   stroke-width: 1.5;
 }
 
-.concept-map__pan [data-type="topic"]:hover rect {
-  fill: var(--surface-2);
+.concept-map__pan [data-type="topic"]:hover rect,
+.concept-map__pan [data-type="concept"]:hover rect {
+  fill: var(--surface-3);
+}
+
+.concept-map__toolbar {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
 }
 
 .concept-map__zoom {
