@@ -31,6 +31,7 @@ AFP.app = (function () {
     { label: "Qüestionaris", hash: "#/quiz", icon: "quiz" },
     { label: "Simulador", hash: "#/examen", icon: "exam" },
     { label: "Targetes", hash: "#/targetes", icon: "cards" },
+    { label: "Mapa conceptual", hash: "#/mapa-conceptual", icon: "glossary" },
     { label: "Glossari", hash: "#/glossari", icon: "glossary" },
     { label: "Estadístiques", hash: "#/estadistiques", icon: "stats" },
     { label: "Guia d'examen", hash: "#/guia", icon: "guide" }
@@ -181,6 +182,7 @@ AFP.app = (function () {
     if (hash.indexOf("#/teoria") === 0 && AFP.theory) AFP.theory.postRender();
     if (hash.indexOf("#/targetes") === 0 && AFP.flashcards) AFP.flashcards.postRender();
     if (hash.indexOf("#/estadistiques") === 0 && AFP.stats) AFP.stats.postRender();
+    if (hash.indexOf("#/mapa-conceptual") === 0 && AFP.conceptMap) AFP.conceptMap.postRender();
   }
 
   /* -------------------------------- Rutes -------------------------------- */
@@ -299,6 +301,7 @@ AFP.app = (function () {
     AFP.router.register("/glossari", function () { return AFP.glossaryView ? AFP.glossaryView.view() : placeholder("Glossari"); });
     AFP.router.register("/estadistiques", function () { return AFP.stats ? AFP.stats.view() : placeholder("Estadístiques"); });
     AFP.router.register("/guia", function () { return AFP.guide ? AFP.guide.view() : placeholder("Guia d'examen"); });
+    AFP.router.register("/mapa-conceptual", function () { return AFP.conceptMap ? AFP.conceptMap.view() : placeholder("Mapa conceptual"); });
     AFP.router.setFallback(notFound);
   }
 

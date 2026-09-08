@@ -1419,11 +1419,109 @@ code, kbd, pre {
 .section-title h2 { margin: 0; }
 
 /* --------------------------------------------------------------------------
+   13b. Mapa conceptual interactiu
+   -------------------------------------------------------------------------- */
+.concept-map__wrap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  max-height: 640px;
+  min-height: 480px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.concept-map__pan {
+  transform-origin: 0 0;
+  transition: transform 120ms ease-out;
+}
+
+.concept-map__pan svg {
+  display: block;
+}
+
+.concept-map__pan [data-type]:hover rect {
+  stroke: var(--text-3);
+  stroke-width: 1.5;
+}
+
+.concept-map__pan [data-type="topic"]:hover rect {
+  fill: var(--surface-2);
+}
+
+.concept-map__zoom {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 4px;
+  z-index: 5;
+}
+
+.concept-map__zoom-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+}
+
+.concept-map__legend {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 6px 10px;
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+  z-index: 5;
+}
+
+.concept-map__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.concept-map__legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* --------------------------------------------------------------------------
    14. Millores responsive (mòbil i pantalles petites)
    -------------------------------------------------------------------------- */
 @media (max-width: 720px) {
   .content {
     padding: var(--space-4) var(--space-3) var(--space-6);
+  }
+
+  /* Mapa conceptual: finestra de mòbil */
+  .concept-map__wrap {
+    height: 55vh;
+    min-height: 420px;
+    max-height: none;
+  }
+
+  .concept-map__legend {
+    font-size: var(--fs-xs);
+    gap: var(--space-2);
   }
 
   /* Hero: menys padding i text més gran llegible */
